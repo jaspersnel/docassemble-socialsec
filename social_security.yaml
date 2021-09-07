@@ -1,0 +1,106 @@
+mandatory: True
+code: |
+    if civil_servant_yn:
+        if one_physical_country:
+            physical_country
+        else:
+            # explain drop anything that is not cs
+            explain_only_cs
+            employee_tree
+    elif employee_yn:
+        if one_physical_country:
+            physical_country
+        else:
+            employee_tree
+    elif freelance_yn:
+        if one_physical_country_freelance:
+            physical_country
+        elif twentyfive_percent:
+            residence_country
+        else:
+            center_of_interest
+    else:
+        need_work
+
+    def employee_tree():
+        if twentyfive_percent:
+            residence_country
+        elif two_ms_one_res:
+            not_res_country
+        elif employers_one_ms:
+            employer_country
+        elif multiple_non_res_ms:
+            residence_country
+        else:
+            edge_case
+---
+code: |
+    employee_tree = True
+    if twentyfive_percent:
+        residence_country
+    elif two_ms_one_res:
+        not_res_country
+    elif employers_one_ms:
+        employer_country
+    elif multiple_non_res_ms:
+        residence_country
+    else:
+        edge_case
+---
+question: Notice
+subquestion: For the next questions, only take into account your role as Civil Servant - disregard any work as regular employee or freelance work.
+continue button field: explain_only_cs
+---
+question: Are you a civil servant?
+yesno: civil_servant_yn
+---
+question: Do you work as an employee?
+yesno: employee_yn
+---
+question: Do you perform freelance work?
+yesno: freelance_yn
+---
+question: Do you perform your work in one country?
+yesno: one_physical_country
+---
+question: Do you perform more than 25% of your freelance work in your country of residence?
+yesno: twentyfive_percent
+---
+question: Are you employed by organizations in two member states, one of which is your country of residence?
+yesno: two_ms_one_res
+---
+question: Are all your employers in a single country?
+yesno: employers_one_ms
+---
+question: Do you have employers in more than two countries that are not your country of residence?
+yesno: multiple_non_res_ms
+---
+question: Do you physically perform your freelance work in one country or do you generate more than 25% of your income in your country of residence?
+yesno: one_physical_country_freelance
+---
+event: residence_country
+question: Outcome
+subquestion: Your social security is in your country of residence.
+---
+event: employer_country
+question: Your in employer
+---
+event: physical_country
+question: Outcome
+subquestion: Your social security is in the country in which you physically perform your work.
+---
+event: edge_case
+question: Outcome
+subquestion: Your situation seems to be an edge case that we cannot easily determine.
+---
+event: need_work
+question: Outcome
+subquestion: This tool will only be able to determine social security status if you perform work.
+---
+event: not_res_country
+question: Outcome
+subquestion: Out of these two countries, your social security is in the country that is not your country of residence.
+---
+event: center_of_interest
+question: Outcome
+subquestion: Your social security is in the country that is the centre of interest of your freelance work.
