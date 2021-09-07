@@ -1,5 +1,6 @@
 mandatory: True
 code: |
+    opening_notice
     if civil_servant_yn:
         if one_physical_country:
             physical_country
@@ -46,6 +47,10 @@ code: |
         residence_country
     else:
         edge_case
+---
+question: Notice
+subquestion: This module assists in determining in which country social security premiums need to be paid in case you are performing activities simultaneously in two or more countries.
+continue button field: opening_notice
 ---
 question: Notice
 subquestion: For the next questions, only take into account your role as Civil Servant - disregard any work as regular employee or freelance work.
