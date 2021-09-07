@@ -81,26 +81,41 @@ yesno: one_physical_country_freelance
 event: residence_country
 question: Outcome
 subquestion: Your social security is in your country of residence.
+buttons:
+  Restart: restart
 ---
 event: employer_country
-question: Your in employer
+question: Outcome
+subquestion: Your social security is in the country in which your employer operates.
+buttons:
+  Restart: restart
 ---
 event: physical_country
 question: Outcome
 subquestion: Your social security is in the country in which you physically perform your work.
+buttons:
+  Restart: restart
 ---
 event: edge_case
 question: Outcome
 subquestion: Your situation seems to be an edge case that we cannot easily determine.
+buttons:
+  Restart: restart
 ---
 event: need_work
 question: Outcome
 subquestion: This tool will only be able to determine social security status if you perform work.
+buttons:
+  Restart: restart
 ---
 event: not_res_country
 question: Outcome
 subquestion: Out of these two countries, your social security is in the country that is not your country of residence.
+buttons:
+  Restart: restart
 ---
 event: center_of_interest
 question: Outcome
 subquestion: Your social security is in the country that is the centre of interest of your freelance work.
+buttons:
+  Restart: restart
