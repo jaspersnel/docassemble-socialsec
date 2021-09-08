@@ -1,55 +1,43 @@
 mandatory: True
 code: |
-    opening_notice
-    if civil_servant_yn:
-        if one_physical_country:
-            physical_country
-        else:
-            # explain drop anything that is not cs
-            explain_only_cs
-            employee_tree
-    elif employee_yn:
-        if one_physical_country:
-            physical_country
-        else:
-            employee_tree
-    elif freelance_yn:
-        if one_physical_country_freelance:
-            physical_country
-        elif twentyfive_percent:
-            residence_country
-        else:
-            center_of_interest
+  opening_notice
+  if civil_servant_yn:
+    if one_physical_country:
+      physical_country
     else:
-        need_work
-
-    def employee_tree():
-        if twentyfive_percent:
-            residence_country
-        elif two_ms_one_res:
-            not_res_country
-        elif employers_one_ms:
-            employer_country
-        elif multiple_non_res_ms:
-            residence_country
-        else:
-            edge_case
+      # explain drop anything that is not cs
+      explain_only_cs
+      employee_tree()
+  elif employee_yn:
+    if one_physical_country:
+      physical_country
+    else:
+      employee_tree()
+  elif freelance_yn:
+    if one_physical_country_freelance:
+      physical_country
+    elif twentyfive_percent:
+      residence_country
+    else:
+      center_of_interest
+  else:
+    need_work
 ---
 code: |
-    employee_tree = True
-    if twentyfive_percent:
-        residence_country
-    elif two_ms_one_res:
-        not_res_country
-    elif employers_one_ms:
-        employer_country
-    elif multiple_non_res_ms:
-        residence_country
-    else:
-        edge_case
+  employee_tree = True
+  if twentyfive_percent:
+    residence_country
+  elif two_ms_one_res:
+    not_res_country
+  elif employers_one_ms:
+    employer_country
+  elif multiple_non_res_ms:
+    residence_country
+  else:
+    edge_case
 ---
 question: Notice
-subquestion: This module assists in determining in which country social security premiums need to be paid in case you are performing activities simultaneously in two or more countries.
+subquestion: "This module assists in determining in which country social security premiums need to be paid in case you are performing activities simultaneously in two or more countries.\n\nBe aware: This app is according the current applicable rules (Regulation No 883/2004). According to COVID-19 measures the rules can be ignored in case a cross border worker is obliged to work at home due to the crisis. This measure runs until 1 January 2022."
 continue button field: opening_notice
 ---
 question: Notice
@@ -83,41 +71,56 @@ yesno: multiple_non_res_ms
 question: Do you physically perform your freelance work in one country or do you generate more than 25% of your income in your country of residence?
 yesno: one_physical_country_freelance
 ---
+template: more_info
+content: |
+  See for more information:
+
+  - [GrensInfoPunten – Advies over wonen en werken in het buurland - GrensInfoPunten (grenzinfo.eu)](https://grenzinfo.eu/nl/)
+  - [Homepage SVB | Sociale Verzekeringsbank | SVB](https://www.svb.nl/nl/)
+  - [Home | RSZ](https://www.rsz.be/)
+  - [Willkommen bei der DVKA - GKV-Spitzenverband, DVKA](https://www.dvka.de/)
+---
 event: residence_country
 question: Outcome
 subquestion: Your social security is in your country of residence.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: employer_country
 question: Outcome
 subquestion: Your social security is in the country in which your employer operates.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: physical_country
 question: Outcome
 subquestion: Your social security is in the country in which you physically perform your work.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: edge_case
 question: Outcome
 subquestion: Your situation seems to be an edge case that we cannot easily determine.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: need_work
 question: Outcome
 subquestion: This tool will only be able to determine social security status if you perform work.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: not_res_country
 question: Outcome
 subquestion: Out of these two countries, your social security is in the country that is not your country of residence.
 buttons:
   Restart: restart
+under: ${ more_info }
 ---
 event: center_of_interest
 question: Outcome
