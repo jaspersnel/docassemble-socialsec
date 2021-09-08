@@ -7,12 +7,12 @@ code: |
     else:
       # explain drop anything that is not cs
       explain_only_cs
-      employee_tree()
+      employee_tree
   elif employee_yn:
     if one_physical_country:
       physical_country
     else:
-      employee_tree()
+      employee_tree
   elif freelance_yn:
     if one_physical_country_freelance:
       physical_country
