@@ -56,7 +56,7 @@ yesno: freelance_yn
 question: Do you perform your work in one country?
 yesno: one_physical_country
 ---
-question: Do you perform more than 25% of your freelance work in your country of residence?
+question: Do you perform more than 25% of your work in your country of residence?
 yesno: twentyfive_percent
 ---
 question: Are you employed by organizations in two member states, one of which is your country of residence?
