@@ -24,7 +24,6 @@ code: |
     need_work
 ---
 code: |
-  employee_tree = True
   if twentyfive_percent:
     residence_country
   elif two_ms_one_res:
@@ -35,6 +34,7 @@ code: |
     residence_country
   else:
     edge_case
+  employee_tree = True
 ---
 question: Notice
 subquestion: "This module assists in determining in which country social security premiums need to be paid in case you are performing activities simultaneously in two or more countries.\n\nBe aware: This app is according the current applicable rules (Regulation No 883/2004). According to COVID-19 measures the rules can be ignored in case a cross border worker is obliged to work at home due to the crisis. This measure runs until 1 January 2022."
