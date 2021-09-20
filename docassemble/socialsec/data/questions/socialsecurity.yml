@@ -2,6 +2,7 @@ mandatory: True
 code: |
   opening_notice
   if civil_servant_yn:
+    worker_type = 'civil servant'
     if one_physical_ms:
       physical_ms
     else:
@@ -9,6 +10,7 @@ code: |
       explain_only_cs
       employee_tree
   elif employee_yn:
+    worker_type = 'employee'
     if one_physical_ms:
       physical_ms
     else:
@@ -59,7 +61,7 @@ yesno: employee_yn
 question: Do you perform freelance work?
 yesno: freelance_yn
 ---
-question: Do you perform your work in one member state?
+question: Do you perform your work as ${ worker_type } in one member state?
 yesno: one_physical_ms
 ---
 question: Do you perform more than 25% of your work in your country of residence?
