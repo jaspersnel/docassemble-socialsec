@@ -93,7 +93,7 @@ content: |
 ---
 event: one_cs
 question: Outcome
-subquestion: Your social security is in the State to which the administration employing you are subject.
+subquestion: Your social security is in the State to which the administration employing you is subject.
 buttons:
   Restart: restart
 under: ${ more_info }
