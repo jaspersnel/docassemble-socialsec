@@ -145,6 +145,10 @@ under: ${ more_info }
 ---
 event: center_of_interest
 question: Outcome
-subquestion: Your social security is in the member state that is the centre of interest of your freelance work.
+subquestion: |
+  Your social security is in the member state that is the centre of interest of your freelance work.
+
+  *The ‘centre of interest’ of the activities of a self-employed person shall be determined by taking account of all the aspects of that person’s occupational activities, notably the place where the person’s fixed and permanent place of business is located, the habitual nature or the duration of the activities pursued, the number of services rendered, and the intention of the person concerned as revealed by all the circumstances*
 buttons:
   Restart: restart
+under: ${ more_info }
