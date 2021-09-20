@@ -79,7 +79,7 @@ yesno: employers_one_ms
 question: Do you have employers in more than two member states that are not your country of residence?
 yesno: multiple_non_res_ms
 ---
-question: Do you physically perform your freelance work in one member state or do you generate more than 25% of your income in your country of residence?
+question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
 yesno: one_physical_ms_freelance
 ---
 template: more_info
