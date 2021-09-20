@@ -3,8 +3,8 @@ code: |
   opening_notice
   if civil_servant_yn:
     worker_type = 'civil servant'
-    if one_physical_ms:
-      physical_ms
+    if one_cs_yn:
+      one_cs
     else:
       # explain drop anything that is not cs
       explain_only_cs
@@ -61,6 +61,9 @@ yesno: employee_yn
 question: Do you perform freelance work?
 yesno: freelance_yn
 ---
+question: Are you employed as a civil servant by organizations in only one member state?
+yesno: one_cs_yn
+---
 question: Do you perform your work as ${ worker_type } in one member state?
 yesno: one_physical_ms
 ---
@@ -87,6 +90,13 @@ content: |
   - [Homepage SVB | Sociale Verzekeringsbank | SVB](https://www.svb.nl/nl/)
   - [Home | RSZ](https://www.rsz.be/)
   - [Willkommen bei der DVKA - GKV-Spitzenverband, DVKA](https://www.dvka.de/)
+---
+event: one_cs
+question: Outcome
+subquestion: Your social security is in the State to which the administration employing you are subject.
+buttons:
+  Restart: restart
+under: ${ more_info }
 ---
 event: residence_country
 question: Outcome
