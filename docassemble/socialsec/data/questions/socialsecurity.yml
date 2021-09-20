@@ -18,7 +18,7 @@ code: |
   elif freelance_yn:
     if one_physical_ms_freelance:
       physical_ms
-    elif twentyfive_percent:
+    elif twentyfive_percent_freelance:
       residence_country
     else:
       center_of_interest
@@ -70,6 +70,9 @@ yesno: one_physical_ms
 question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your country of residence?
 yesno: twentyfive_percent
 ---
+question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
+yesno: twentyfive_percent_freelance
+---
 question: Are you employed by organizations in two member states, one of which is your country of residence?
 yesno: two_ms_one_res
 ---
@@ -79,7 +82,7 @@ yesno: employers_one_ms
 question: Do you have employers in more than two member states that are not your country of residence?
 yesno: multiple_non_res_ms
 ---
-question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
+question: Do you physically perform your freelance work in one member state?
 yesno: one_physical_ms_freelance
 ---
 template: more_info
