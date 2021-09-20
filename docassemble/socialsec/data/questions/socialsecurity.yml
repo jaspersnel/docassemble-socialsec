@@ -2,20 +2,20 @@ mandatory: True
 code: |
   opening_notice
   if civil_servant_yn:
-    if one_physical_country:
-      physical_country
+    if one_physical_ms:
+      physical_ms
     else:
       # explain drop anything that is not cs
       explain_only_cs
       employee_tree
   elif employee_yn:
-    if one_physical_country:
-      physical_country
+    if one_physical_ms:
+      physical_ms
     else:
       employee_tree
   elif freelance_yn:
-    if one_physical_country_freelance:
-      physical_country
+    if one_physical_ms_freelance:
+      physical_ms
     elif twentyfive_percent:
       residence_country
     else:
@@ -29,7 +29,7 @@ code: |
   elif two_ms_one_res:
     not_res_country
   elif employers_one_ms:
-    employer_country
+    employer_ms
   elif multiple_non_res_ms:
     residence_country
   else:
@@ -37,7 +37,7 @@ code: |
   employee_tree = True
 ---
 question: Notice
-subquestion: "This module assists in determining in which country social security premiums need to be paid in case you are performing activities simultaneously in two or more countries.\n\nBe aware: This app is according the current applicable rules (Regulation No 883/2004). According to COVID-19 measures the rules can be ignored in case a cross border worker is obliged to work at home due to the crisis. This measure runs until 1 January 2022."
+subquestion: "This module assists in determining in which member state social security premiums need to be paid in case you are performing activities simultaneously in two or more member states.\n\nBe aware: This app is according the current applicable rules (Regulation No 883/2004). According to COVID-19 measures the rules can be ignored in case a cross border worker is obliged to work at home due to the crisis. This measure runs until 1 January 2022."
 continue button field: opening_notice
 ---
 question: Notice
@@ -53,8 +53,8 @@ yesno: employee_yn
 question: Do you perform freelance work?
 yesno: freelance_yn
 ---
-question: Do you perform your work in one country?
-yesno: one_physical_country
+question: Do you perform your work in one member state?
+yesno: one_physical_ms
 ---
 question: Do you perform more than 25% of your work in your country of residence?
 yesno: twentyfive_percent
@@ -62,14 +62,14 @@ yesno: twentyfive_percent
 question: Are you employed by organizations in two member states, one of which is your country of residence?
 yesno: two_ms_one_res
 ---
-question: Are all your employers in a single country?
+question: Are all your employers in a single member state?
 yesno: employers_one_ms
 ---
-question: Do you have employers in more than two countries that are not your country of residence?
+question: Do you have employers in more than two member states that are not your country of residence?
 yesno: multiple_non_res_ms
 ---
-question: Do you physically perform your freelance work in one country or do you generate more than 25% of your income in your country of residence?
-yesno: one_physical_country_freelance
+question: Do you physically perform your freelance work in one member state or do you generate more than 25% of your income in your country of residence?
+yesno: one_physical_ms_freelance
 ---
 template: more_info
 content: |
@@ -87,16 +87,16 @@ buttons:
   Restart: restart
 under: ${ more_info }
 ---
-event: employer_country
+event: employer_ms
 question: Outcome
-subquestion: Your social security is in the country in which your employer operates.
+subquestion: Your social security is in the member state in which your employer operates.
 buttons:
   Restart: restart
 under: ${ more_info }
 ---
-event: physical_country
+event: physical_ms
 question: Outcome
-subquestion: Your social security is in the country in which you physically perform your work.
+subquestion: Your social security is in the member state in which you physically perform your work.
 buttons:
   Restart: restart
 under: ${ more_info }
@@ -117,13 +117,13 @@ under: ${ more_info }
 ---
 event: not_res_country
 question: Outcome
-subquestion: Out of these two countries, your social security is in the country that is not your country of residence.
+subquestion: Out of these two member states, your social security is in the member state that is not your country of residence.
 buttons:
   Restart: restart
 under: ${ more_info }
 ---
 event: center_of_interest
 question: Outcome
-subquestion: Your social security is in the country that is the centre of interest of your freelance work.
+subquestion: Your social security is in the member state that is the centre of interest of your freelance work.
 buttons:
   Restart: restart
