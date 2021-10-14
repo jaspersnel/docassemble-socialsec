@@ -3,7 +3,7 @@ code: |
   opening_notice
   if civil_servant_yn:
     worker_type = 'civil servant'
-    if !one_cs_yn:
+    if not one_cs_yn:
       one_cs
     else:
       # explain drop anything that is not cs
