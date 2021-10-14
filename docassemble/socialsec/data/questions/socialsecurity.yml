@@ -3,7 +3,7 @@ code: |
   opening_notice
   if civil_servant_yn:
     worker_type = 'civil servant'
-    if one_cs_yn:
+    if !one_cs_yn:
       one_cs
     else:
       # explain drop anything that is not cs
@@ -61,7 +61,7 @@ yesno: employee_yn
 question: Do you perform freelance work?
 yesno: freelance_yn
 ---
-question: Are you employed as a civil servant by organizations in only one member state?
+question: Are you employed as a civil servant by organizations subject to legislation in multiple member states?
 yesno: one_cs_yn
 ---
 question: Do you perform your work as ${ worker_type } in one member state?
