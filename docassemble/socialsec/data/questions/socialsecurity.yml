@@ -14,6 +14,7 @@ code: |
     if one_physical_ms:
       physical_ms
     else:
+      employee_freelance_notice
       employee_tree
   elif freelance_yn:
     if one_physical_ms_freelance:
@@ -28,14 +29,18 @@ code: |
 code: |
   if twentyfive_percent:
     residence_country
-  elif two_ms_one_res:
-    not_res_country
-  elif employers_one_ms:
-    employer_ms
-  elif multiple_non_res_ms:
-    residence_country
   else:
-    edge_case
+    non_eu_employer_notice
+    if one_employer:
+      employer_ms
+    elif employers_one_ms:
+      employer_ms
+    elif two_ms_one_res:
+      not_res_country
+    elif multiple_non_res_ms:
+      residence_country
+    else:
+      edge_case
   employee_tree = True
 ---
 question: Notice
@@ -51,6 +56,14 @@ continue button field: opening_notice
 question: Notice
 subquestion: For the next questions, only take into account your role as Civil Servant - disregard any work as regular employee or freelance work.
 continue button field: explain_only_cs
+---
+question: Notice
+subquestion: If you perform activities in two or more Member States on behalf of an employer established outside the territory of the European Union, your social security is always in the Member State of residence.
+continue button field: non_eu_employer_notice
+---
+question: Notice
+subquestion: If you perform work as an employee and work freelance, your work as an employee will determine where your social security is.
+continue button field: employee_freelance_notice
 ---
 question: Are you a civil servant?
 subquestion: |
@@ -72,16 +85,19 @@ yesno: one_physical_ms
 question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your residence state?
 yesno: twentyfive_percent
 ---
+question: Are you employed by one undertaking or employer?
+yesno: one_employer
+---
 question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
 yesno: twentyfive_percent_freelance
 ---
 question: Are you employed by organizations in two member states, one of which is your residence state?
 yesno: two_ms_one_res
 ---
-question: Are all your employers in a single member state?
+question: Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one Member State?
 yesno: employers_one_ms
 ---
-question: Do you have employers in more than two member states that are not your residence state?
+question: Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different Member States other than the Member State of residence?
 yesno: multiple_non_res_ms
 ---
 question: Do you physically perform your freelance work in one member state?
@@ -112,7 +128,7 @@ under: ${ more_info }
 ---
 event: employer_ms
 question: Outcome
-subquestion: Your social security is in the member state in which your employer operates.
+subquestion: you are subjected to the Member State in which the registered office or place of business of the undertakings or employers is situated.
 buttons:
   Restart: restart
 under: ${ more_info }
