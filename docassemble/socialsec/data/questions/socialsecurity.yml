@@ -86,22 +86,22 @@ yesno: one_cs_yn
 question: Do you perform your work as ${ worker_type } in one member state (not in case of posting)?
 yesno: one_physical_ms
 ---
-question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your residence state?
+question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your residence member state?
 yesno: twentyfive_percent
 ---
 question: Are you employed by one undertaking or employer?
 yesno: one_employer
 ---
-question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
+question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence member state?
 yesno: twentyfive_percent_freelance
 ---
 question: Are you employed by organizations in two member states, one of which is your residence state?
 yesno: two_ms_one_res
 ---
-question: Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one Member State?
+question: Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one member state?
 yesno: employers_one_ms
 ---
-question: Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different Member States other than the Member State of residence?
+question: Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different member states other than the member state of residence?
 yesno: multiple_non_res_ms
 ---
 question: Do you physically perform your freelance work in one member state?
@@ -119,7 +119,7 @@ content: |
 ---
 event: one_cs
 question: Outcome
-subquestion: Your social security is in the State to which the administration employing you is subject.
+subquestion: Your social security is in the member state to which the administration employing you is subject.
 buttons:
   Restart: restart
 under: ${ more_info }
@@ -133,7 +133,7 @@ under: ${ more_info }
 ---
 event: employer_ms
 question: Outcome
-subquestion: you are subjected to the Member State in which the registered office or place of business of the undertakings or employers is situated.
+subquestion: you are subjected to the member state in which the registered office or place of business of the undertakings or employers is situated.
 buttons:
   Restart: restart
 under: ${ more_info }
@@ -161,7 +161,7 @@ under: ${ more_info }
 ---
 event: not_res_country
 question: Outcome
-subquestion: Out of these two member states, your social security is in the member state that is not your residence state.
+subquestion: Out of the two member states in which your two employers are situated, your social security is in the member state that is not your residence state.
 buttons:
   Restart: restart
 under: ${ more_info }
