@@ -77,6 +77,7 @@ question: Do you perform freelance work?
 yesno: freelance_yn
 ---
 question: Are you employed as a civil servant by organizations subject to legislation in multiple member states?
+subquestion: For example, are you employed by both a municipality in the Netherlands and one in Germany?
 yesno: one_cs_yn
 ---
 question: Do you perform your work as ${ worker_type } in one member state (not in case of posting)?
