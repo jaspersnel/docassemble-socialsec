@@ -67,7 +67,7 @@ yesno: one_cs_yn
 question: Do you perform your work as ${ worker_type } in one member state?
 yesno: one_physical_ms
 ---
-question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your country of residence?
+question: Do you perform more than 25% of your working time and/or receive 25% of your total remuneration as ${ worker_type } in your country of residence?
 yesno: twentyfive_percent
 ---
 question: Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence state?
