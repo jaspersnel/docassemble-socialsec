@@ -103,7 +103,7 @@ under: ${ more_info }
 ---
 event: residence_country
 question: Outcome
-subquestion: Your social security is in your country of residence.
+subquestion: Your social security is in your country of residence. That means your employer is obliged to pay social security contributions in that state.
 buttons:
   Restart: restart
 under: ${ more_info }
