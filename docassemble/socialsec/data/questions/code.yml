@@ -1,0 +1,62 @@
+objects:
+  - outcome_dict: DADict
+---
+initial: True
+code: |
+  set_language('en')
+  process_action()
+  need(outcome)
+---
+code: |
+  opening_notice
+  if civil_servant_yn:
+    worker_type = 'civil servant'
+    if not one_cs_yn:
+      outcome_str = outcome_dict['one_cs']
+    else:
+      # explain drop anything that is not cs
+      explain_only_cs
+      employee_tree
+  elif employee_yn:
+    worker_type = 'employee'
+    if one_physical_ms:
+      outcome_str = outcome_dict['physical_ms']
+    else:
+      employee_freelance_notice
+      employee_tree
+  elif freelance_yn:
+    if one_physical_ms_freelance:
+      outcome_str = outcome_dict['physical_ms']
+    elif twentyfive_percent_freelance:
+      outcome_str = outcome_dict['residence_country']
+    else:
+      outcome_str = outcome_dict['center_of_interest']
+  else:
+    outcome_str = outcome_dict['need_work']
+  main_tree = True
+---
+code: |
+  main_tree
+  if twentyfive_percent:
+    outcome_str = outcome_dict['residence_country']
+  else:
+    non_eu_employer_notice
+    if one_employer:
+      outcome_str = outcome_dict['employer_ms']
+    elif employers_one_ms:
+      outcome_str = outcome_dict['employer_ms']
+    elif two_ms_one_res:
+      outcome_str = outcome_dict['not_res_country']
+    elif multiple_non_res_ms:
+      outcome_str = outcome_dict['residence_country']
+    else:
+      outcome_str = outcome_dict['edge_case']
+  employee_tree = True
+---
+mandatory: True
+event: outcome
+question: Outcome
+subquestion: ${ outcome_str }
+buttons:
+  Restart: restart
+under: ${ more_info }
