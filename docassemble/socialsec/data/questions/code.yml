@@ -1,62 +1,109 @@
 objects:
   - outcome_dict: DADict
+  - civil_servant_yn: DAObject
+  - one_cs_yn: DAObject
+  - employee_yn: DAObject
+  - freelance_yn: DAObject
+  - one_physical_ms: DAObject
+  - one_physical_ms_freelance: DAObject
+  - twentyfive_percent_freelance: DAObject
+  - twentyfive_percent: DAObject
+  - one_employer: DAObject
+  - employers_one_ms: DAObject
+  - two_ms_one_res: DAObject
+  - multiple_non_res_ms: DAObject
 ---
 initial: True
 code: |
+  all_questions = [
+    civil_servant_yn,
+    one_cs_yn,
+    employee_yn,
+    freelance_yn,
+    one_physical_ms,
+    one_physical_ms_freelance,
+    twentyfive_percent_freelance,
+    twentyfive_percent,
+    one_employer,
+    employers_one_ms,
+    two_ms_one_res,
+    multiple_non_res_ms,
+  ]
+  
   set_language('en')
   process_action()
   need(outcome)
 ---
 code: |
+  def employee_tree():
+    if twentyfive_percent.answer:
+      return outcome_dict['residence_country']
+    else:
+      non_eu_employer_notice
+      if one_employer.answer:
+        return outcome_dict['employer_ms']
+      elif employers_one_ms.answer:
+        return outcome_dict['employer_ms']
+      elif two_ms_one_res.answer:
+        return outcome_dict['not_res_country']
+      elif multiple_non_res_ms.answer:
+        return outcome_dict['residence_country']
+      else:
+        return outcome_dict['edge_case']
+  
+  main_tree = True
   opening_notice
-  if civil_servant_yn:
+  if civil_servant_yn.answer:
     worker_type = 'civil servant'
-    if not one_cs_yn:
+    if not one_cs_yn.answer:
       outcome_str = outcome_dict['one_cs']
     else:
       # explain drop anything that is not cs
       explain_only_cs
-      employee_tree
-  elif employee_yn:
+      outcome_str = employee_tree()
+  elif employee_yn.answer:
     worker_type = 'employee'
-    if one_physical_ms:
+    if one_physical_ms.answer:
       outcome_str = outcome_dict['physical_ms']
     else:
       employee_freelance_notice
-      employee_tree
-  elif freelance_yn:
-    if one_physical_ms_freelance:
+      outcome_str = employee_tree()
+  elif freelance_yn.answer:
+    if one_physical_ms_freelance.answer:
       outcome_str = outcome_dict['physical_ms']
-    elif twentyfive_percent_freelance:
+    elif twentyfive_percent_freelance.answer:
       outcome_str = outcome_dict['residence_country']
     else:
       outcome_str = outcome_dict['center_of_interest']
   else:
     outcome_str = outcome_dict['need_work']
-  main_tree = True
 ---
-code: |
-  main_tree
-  if twentyfive_percent:
-    outcome_str = outcome_dict['residence_country']
-  else:
-    non_eu_employer_notice
-    if one_employer:
-      outcome_str = outcome_dict['employer_ms']
-    elif employers_one_ms:
-      outcome_str = outcome_dict['employer_ms']
-    elif two_ms_one_res:
-      outcome_str = outcome_dict['not_res_country']
-    elif multiple_non_res_ms:
-      outcome_str = outcome_dict['residence_country']
-    else:
-      outcome_str = outcome_dict['edge_case']
-  employee_tree = True
+generic object: DAObject
+question: ${ x.question }
+subquestion: |
+  % if x.attr('subquestion'):
+    ${ x.subquestion }
+  % endif
+yesno: x.answer
 ---
 mandatory: True
 event: outcome
 question: Outcome
-subquestion: ${ outcome_str }
+subquestion: |
+  **${ outcome_str }**
 buttons:
   Restart: restart
-under: ${ more_info }
+under: |
+  #### The questions and answers provided to lead to this conclusion  
+  % for q in all_questions:
+  % if q.attr('answer') is not None:
+  **${ q.question }**  
+  % if q.attr('answer'):
+  Yes  
+  % else:
+  No  
+  % endif
+  % endif
+  % endfor
+  
+  ${ more_info }
