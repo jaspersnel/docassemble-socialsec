@@ -1,5 +1,15 @@
 default language: en
 ---
+code: |
+  # Localisation
+  loc_outcome = 'Outcome'
+  loc_review = 'The questions and answers provided to lead to this conclusion'
+  loc_yes = 'Yes'
+  loc_no = 'No'
+  loc_employee = 'employee'
+  loc_civil_servant = 'civil servant'
+
+---
 question: Notice
 subquestion: |
   This module assists in determining in which member state social security premiums need to be paid in case you are performing activities simultaneously in two or more member states.

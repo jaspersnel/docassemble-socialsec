@@ -54,7 +54,7 @@ code: |
   main_tree = True
   opening_notice
   if civil_servant_yn.answer:
-    worker_type = 'civil servant'
+    worker_type = loc_civil_servant
     if not one_cs_yn.answer:
       outcome_str = outcome_dict['one_cs']
     else:
@@ -62,7 +62,7 @@ code: |
       explain_only_cs
       outcome_str = employee_tree()
   elif employee_yn.answer:
-    worker_type = 'employee'
+    worker_type = loc_employee
     if one_physical_ms.answer:
       outcome_str = outcome_dict['physical_ms']
     else:
@@ -84,24 +84,27 @@ subquestion: |
   % if x.attr('subquestion'):
     ${ x.subquestion }
   % endif
-yesno: x.answer
+field: x.answer
+buttons:
+  - "${ loc_yes }": True
+  - "${ loc_no }": False
 ---
 mandatory: True
 event: outcome
-question: Outcome
+question: ${ loc_outcome }
 subquestion: |
   **${ outcome_str }**
 buttons:
   Restart: restart
 under: |
-  #### The questions and answers provided to lead to this conclusion  
+  #### ${ loc_review } 
   % for q in all_questions:
   % if q.attr('answer') is not None:
   **${ q.question }**  
   % if q.attr('answer'):
-  Yes  
+  ${ loc_yes }  
   % else:
-  No  
+  ${ loc_no }  
   % endif
   % endif
   % endfor
