@@ -30,9 +30,14 @@ code: |
     multiple_non_res_ms,
   ]
   
-  set_language('en')
+  set_language(language)
   process_action()
   need(outcome)
+---
+question: Which language are you most confortable with?
+field: language
+choices:
+  - "English": en
 ---
 code: |
   def employee_tree():
