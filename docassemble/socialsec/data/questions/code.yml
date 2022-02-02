@@ -34,7 +34,7 @@ code: |
   process_action()
   need(outcome)
 ---
-question: Which language are you most confortable with?
+question: Which language are you most comfortable with?
 field: language
 choices:
   - "English": en
