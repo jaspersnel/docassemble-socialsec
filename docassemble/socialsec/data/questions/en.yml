@@ -34,7 +34,10 @@ subquestion: If you perform activities in two or more Member States on behalf of
 continue button field: non_eu_employer_notice
 ---
 question: Notice
-subquestion: If you perform work as an employee and work freelance, your work as an employee will determine where your social security is.
+subquestion: |
+  If you perform work as an employee and work freelance, your work as an employee will determine where your social security is.
+
+  For example: in case you work as an employee in Belgium and work as freelancer in the Netherlands, you are subject to the Belgium legislation.
 continue button field: employee_freelance_notice
 ---
 code: |
