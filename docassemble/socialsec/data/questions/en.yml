@@ -73,6 +73,8 @@ code: |
 code: |
   one_employer.question = \
     'Are you employed by one undertaking or employer?'
+  one_employer.subquestion = \
+    'For example: you are living in Germany and working at X GmbH in the Netherlands as in Germany as well.'
 ---
 code: |
   twentyfive_percent_freelance.question = \
@@ -81,14 +83,20 @@ code: |
 code: |
   two_ms_one_res.question = \
     'Are you employed by organizations in two member states, one of which is your residence state?'
+  two_ms_one_res.subquestion = \
+    'For example: you are living in France and working at X SARL in France and at Y BV in Belgium.'
 ---
 code: |
   employers_one_ms.question = \
     'Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one member state?'
+  employers_one_ms.subquestion = \
+    'For example, you are living in Belgium and working at X BV and at Y BV in the Netherlands.'
 ---
 code: |
   multiple_non_res_ms.question = \
     'Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different member states other than the member state of residence?'
+  multiple_non_res_ms.subquestion = \
+    'For example: you are living in Belgium and you are working as an employee at X GmbH in Germany and at Y BV in the Netherlands.'
 ---
 code: |
   one_physical_ms_freelance.question = \
