@@ -99,7 +99,7 @@ code: |
 ---
 code: |
   outcome_dict['employer_ms'] = \
-    "you are subjected to the member state in which the registered office or place of business of the undertakings or employers is situated."
+    "You are subjected to the member state in which the registered office or place of business of the undertaking(s) or employer(s) is/are situated."
 ---
 code: |
   outcome_dict['physical_ms'] = \
