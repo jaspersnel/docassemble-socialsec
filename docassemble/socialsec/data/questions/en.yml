@@ -63,6 +63,8 @@ code: |
 code: |
   one_physical_ms.question = \
     f'Do you perform your work as { worker_type } in one member state (not in case of posting)?'
+  one_physical_ms.subquestion = \
+    'In case of posting one is subject to the legislation of the sending State. '
 ---
 code: |
   twentyfive_percent.question = \
