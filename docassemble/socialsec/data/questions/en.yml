@@ -51,9 +51,9 @@ code: |
 ---
 code: |
   one_cs_yn.question = \
-    'Are you employed as a civil servant by organizations subject to legislation in multiple member states?'
+    'Are you employed as a civil servant by organizations subject to legislation in only one member state?'
   one_cs_yn.subquestion = \
-    'For example, are you employed by both a municipality in the Netherlands and one in Germany?'
+    'For example, are you employed by a municipality in the Netherlands, but not one in Germany or Belgium?'
 ---
 code: |
   one_physical_ms.question = \

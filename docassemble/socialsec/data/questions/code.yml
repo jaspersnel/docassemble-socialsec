@@ -60,7 +60,7 @@ code: |
   opening_notice
   if civil_servant_yn.answer:
     worker_type = loc_civil_servant
-    if not one_cs_yn.answer:
+    if one_cs_yn.answer:
       outcome_str = outcome_dict['one_cs']
     else:
       # explain drop anything that is not cs
