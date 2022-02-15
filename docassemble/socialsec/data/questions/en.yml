@@ -12,24 +12,24 @@ code: |
 ---
 question: Notice
 subquestion: |
-  This module assists in determining in which member state social security premiums need to be paid in case you are performing activities simultaneously in two or more member states.
+  This module assists in determining in which Member State social security premiums need to be paid in case you are performing activities simultaneously in two or more Member States.
 
   Please note:
   
   - This module is not about taxation. For taxation one has to look at the applicable tax treaty.
   - This app is according the current applicable rules (Regulation No 883/2004 and Regulation No 987/2009). According to COVID-19 measures the rules can be ignored in case a cross border worker is obliged to work at home due to the crisis. This measure runs until 1 July 2022.
-  - You are subject to the legislation of a single member state only, issued by the competent organ.
+  - You are subject to the legislation of a single Member State only, issued by the competent organ.
   - Working from home means that you are working in your residence State.
   - In case of working in two or more Member State one needs a so-called A1-form in which the competent organ of the residence State determines which legislation is applicable.
 continue button field: opening_notice
 ---
 question: Notice
 subquestion: |
-  For the next questions, if you perform activities as a civil servant in one member state and activities as an employee or a freelancer in another member state, the legislation of the member state in which you are civil servant is 'leading'. 
+  For the next questions, if you perform activities as a civil servant in one Member State and activities as an employee or a freelancer in another Member State, the legislation of the Member State in which you are civil servant is 'leading'. 
 
   For example, if you work for a Dutch municipality (and are thus working as civil servant) and for a commercial company in Germany, ignore the function as employee in Germany when answering the next questions.
   
-  The next questions are about performing activities in two or more member states as a civil servant.
+  The next questions are about performing activities in two or more Member States as a civil servant.
 continue button field: explain_only_cs
 ---
 question: Notice
@@ -61,7 +61,7 @@ code: |
 ---
 code: |
   one_cs_yn.question = \
-    'Are you employed as a civil servant by organizations subject to legislation in only one member state?'
+    'Are you employed as a civil servant by organizations subject to legislation in only one Member State?'
   one_cs_yn.subquestion = \
     'For example, you are employed by a municipality in the Netherlands, but not one in Germany or Belgium.'
   one_cs_yn.answer_suppl = \
@@ -69,7 +69,7 @@ code: |
 ---
 code: |
   one_physical_ms.question = \
-    f'Do you perform your work as { worker_type } in one member state (not in case of posting)?'
+    f'Do you perform your work as { worker_type } in one Member State (not in case of posting)?'
   one_physical_ms.subquestion = \
     'In case of posting one is subject to the legislation of the sending State. '
   one_physical_ms.answer_suppl = \
@@ -77,7 +77,7 @@ code: |
 ---
 code: |
   twentyfive_percent.question = \
-    'Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your residence member state?'
+    'Do you perform more than 25% of your working time and/or receive 25% of your total remuneration in your residence Member State?'
   twentyfive_percent.answer_suppl = \
     '(art. 13(1)(a) Reg. No 883/2004 juncto art. 14(8) and (10) Reg. No 987/2009). An A1-form is needed issued by the competent organ of your residence State'
 ---
@@ -91,13 +91,13 @@ code: |
 ---
 code: |
   twentyfive_percent_freelance.question = \
-    'Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence member state?'
+    'Are you performing more than 25% of your turnover, working time, number of services rendered and/or income in the residence Member State?'
   twentyfive_percent_freelance.answer_suppl = \
     '(art. 13(2)(a) Reg. No 883/2004 juncto art. 14(8) an (10) Reg. No 987/2009)'
 ---
 code: |
   two_ms_one_res.question = \
-    'Are you employed by organizations in two member states, one of which is your residence state?'
+    'Are you employed by organizations in two Member States, one of which is your residence State?'
   two_ms_one_res.subquestion = \
     'For example: you are living in France and working at X SARL in France and at Y BV in Belgium.'
   two_ms_one_res.answer_suppl = \
@@ -105,7 +105,7 @@ code: |
 ---
 code: |
   employers_one_ms.question = \
-    'Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one member state?'
+    'Are you performing activities for two or more undertakings or employers which have their registered office or place of business in only one Member State?'
   employers_one_ms.subquestion = \
     'For example, you are living in Belgium and working at X BV and at Y BV in the Netherlands.'
   employers_one_ms.answer_suppl = \
@@ -113,7 +113,7 @@ code: |
 ---
 code: |
   multiple_non_res_ms.question = \
-    'Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different member states other than the member state of residence?'
+    'Are you performing activities for two or more employers or undertakings and  at least two of which have their registered office or place of business in different Member States other than the Member State of residence?'
   multiple_non_res_ms.subquestion = \
     'For example: you are living in Belgium and you are working as an employee at X GmbH in Germany and at Y BV in the Netherlands.'
   multiple_non_res_ms.answer_suppl = \
@@ -121,25 +121,25 @@ code: |
 ---
 code: |
   one_physical_ms_freelance.question = \
-    'Do you physically perform your freelance work in one member state?'
+    'Do you physically perform your freelance work in one Member State?'
   one_physical_ms_freelance.answer_suppl = \
     '(art. 11(3)(a) Reg. No 883/2004)'
 ---
 code: |
   outcome_dict['one_cs'] = \
-    "Your social security is in the member state to which the administration employing you is subject."
+    "Your social security is in the Member State to which the administration employing you is subject."
 ---
 code: |
   outcome_dict['residence_country'] = \
-    "Your social security is in your residence state."
+    "Your social security is in your residence State."
 ---
 code: |
   outcome_dict['employer_ms'] = \
-    "You are subjected to the member state in which the registered office or place of business of the undertaking(s) or employer(s) is/are situated."
+    "You are subjected to the Member State in which the registered office or place of business of the undertaking(s) or employer(s) is/are situated."
 ---
 code: |
   outcome_dict['physical_ms'] = \
-    "Your social security is in the member state in which you physically perform your work (not in case of posting)."
+    "Your social security is in the Member State in which you physically perform your work (not in case of posting)."
 ---
 code: |
   outcome_dict['edge_case'] = \
@@ -151,11 +151,11 @@ code: |
 ---
 code: |
   outcome_dict['not_res_country'] = \
-    "Out of the two member states in which your two employers are situated, your social security is in the member state that is not your residence state."
+    "Out of the two Member States in which your two employers are situated, your social security is in the Member State that is not your residence State."
 ---
 code: |
   outcome_dict['center_of_interest'] = \
-    """Your social security is in the member state that is the centre of interest of your freelance work.**
+    """Your social security is in the Member State that is the centre of interest of your freelance work.**
 
   ***The ‘centre of interest’ of the activities of a self-employed person shall be determined by taking account of all the aspects of that person’s occupational activities, notably the place where the person’s fixed and permanent place of business is located, the habitual nature or the duration of the activities pursued, the number of services rendered, and the intention of the person concerned as revealed by all the circumstances*"""
 ---
