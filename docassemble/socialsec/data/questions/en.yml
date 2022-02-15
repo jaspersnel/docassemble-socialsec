@@ -30,7 +30,7 @@ subquestion: |
 continue button field: explain_only_cs
 ---
 question: Notice
-subquestion: If you perform activities in two or more Member States on behalf of an employer established outside the territory of the European Union, your social security is always in the Member State of residence.
+subquestion: If you perform activities in two or more Member States on behalf of an employer established outside the territory of the European Union, your social security is always in the Member State of residence (art. 14(11) Reg. No 987/2009).
 continue button field: non_eu_employer_notice
 ---
 question: Notice
@@ -60,7 +60,7 @@ code: |
   one_cs_yn.question = \
     'Are you employed as a civil servant by organizations subject to legislation in only one member state?'
   one_cs_yn.subquestion = \
-    'For example, are you employed by a municipality in the Netherlands, but not one in Germany or Belgium?'
+    'For example, you are employed by a municipality in the Netherlands, but not one in Germany or Belgium.'
   one_cs_yn.answer_suppl = \
     '(art. 11(3)(b) Reg. No 883/2004)'
 ---
